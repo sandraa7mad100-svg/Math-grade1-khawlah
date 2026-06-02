@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منصة الرياضيات التفاعلية - الصف الأول الابتدائي</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top-header">
+    <div class="brand">
+      <div class="logo">🎓</div>
+      <div>
+        <h1>منصة الرياضيات التفاعلية - الصف الأول الابتدائي</h1>
+        <p>الفصل الدراسي الثاني - المملكة العربية السعودية</p>
+      </div>
+    </div>
+
+    <div class="school-info">
+      <span>المعلمة: <b>خولة اليحيى</b></span>
+      <span>مديرة المدرسة: <b>حصة العييدي</b></span>
+      <span>مدرسة: <b>آسية بنت مزاحم للطفولة المبكرة</b></span>
+    </div>
+
+    <div class="score-bar">
+      <div>⭐ النجوم: <b id="starsCount">0</b></div>
+      <div>🏆 النقاط: <b id="pointsCount">0</b></div>
+      <button id="resetBtn" class="small-btn">إعادة التقدم</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="screen active">
+      <div class="hero card">
+        <div class="hero-text">
+          <h2>هيا نتعلم الرياضيات باللعب! 🌈</h2>
+          <p>اختر وحدة، العب، اجمع النجوم، واحصل على شهادة الإنجاز.</p>
+          <button id="startBtn" class="primary-btn">ابدأ التعلم 🚀</button>
+        </div>
+        <div class="hero-mascot" aria-label="شخصية كرتونية">🦁📚</div>
+      </div>
+
+      <div class="progress-card card">
+        <h3>تقدم الطالب</h3>
+        <div class="progress-wrapper">
+          <div id="progressFill"></div>
+        </div>
+        <p id="progressText">0% مكتمل</p>
+      </div>
+
+      <h2 class="section-title">وحدات المنهج</h2>
+      <div id="unitsList" class="units-grid"></div>
+
+      <h2 class="section-title">الألعاب التعليمية</h2>
+      <div class="games-grid">
+        <button class="game-card" data-game="quiz">🎯 اختيار الإجابة الصحيحة</button>
+        <button class="game-card" data-game="drag">🧩 السحب والإفلات</button>
+        <button class="game-card" data-game="wheel">🎡 عجلة الحظ التعليمية</button>
+        <button class="game-card" data-game="time">⏱️ تحدي الوقت</button>
+        <button class="game-card" data-game="build">🏗️ بناء العدد</button>
+        <button class="game-card" data-game="shapes">🔺 الأشكال الهندسية</button>
+      </div>
+    </section>
+
+    <section id="lesson" class="screen">
+      <button class="back-btn">⬅ الرجوع</button>
+      <div class="card">
+        <h2 id="lessonTitle"></h2>
+        <p id="lessonDesc"></p>
+        <div id="topicsList" class="topics-list"></div>
+        <button id="completeUnitBtn" class="primary-btn">أنهيت هذه الوحدة ✅</button>
+      </div>
+    </section>
+
+    <section id="game" class="screen">
+      <button class="back-btn">⬅ الرجوع</button>
+      <div class="card game-panel">
+        <h2 id="gameTitle"></h2>
+        <div id="gameArea"></div>
+        <p id="message" class="message"></p>
+      </div>
+    </section>
+
+    <section id="achievements" class="screen">
+      <button class="back-btn">⬅ الرجوع</button>
+      <div class="card">
+        <h2>لوحة الإنجازات 🏆</h2>
+        <div id="badges" class="badges"></div>
+        <div id="certificate" class="certificate hidden">
+          <h2>🎉 شهادة إنجاز 🎉</h2>
+          <p>تُمنح هذه الشهادة للطالبة/الطالب لإكمال جميع وحدات رياضيات الصف الأول الابتدائي - الفصل الدراسي الثاني.</p>
+          <b>أحسنت! أنت نجم الرياضيات ⭐</b>
+          <button onclick="window.print()" class="primary-btn">طباعة الشهادة</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-screen="home">🏠 الرئيسية</button>
+    <button data-game="quiz">🎯 سؤال</button>
+    <button data-game="wheel">🎡 العجلة</button>
+    <button data-screen="achievements">🏆 الإنجازات</button>
+  </nav>
+
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
